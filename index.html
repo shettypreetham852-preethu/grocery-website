@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshCart - Your Online Grocery</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="container">
+            <a href="#" class="logo">🛒 FreshCart</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#order">Order</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#suggest">Suggest</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn btn-secondary" id="login-btn">Login / Sign Up</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Fresh Groceries, Delivered Fast.</h1>
+                <p>Your one-stop shop for fresh produce, pantry staples, and more.</p>
+                <a href="#order" class="btn btn-primary btn-lg">Start Shopping</a>
+            </div>
+        </section>
+
+        <section id="order" class="form-section">
+            <div class="container">
+                <h2><i class="fas fa-shopping-basket"></i> Place Your Order</h2>
+                <div class="product-grid">
+                    
+                    <div class="product-item">
+                        <img src="assets/images/tomatoes.jpg" alt="Fresh Tomatoes">
+                        <h3>Fresh Tomatoes (टमाटर)</h3>
+                        <p class="price">₹60.00 / kg</p>
+                        <div class="form-group">
+                            <label for="item-1">Quantity (kg):</label>
+                            <input type="number" id="item-1" class="order-input" data-price="60.00" min="0" value="0" step="0.5">
+                        </div>
+                    </div>
+                    
+                    <div class="product-item">
+                        <img src="assets/images/chicken-breast.jpg" alt="Chicken Breast">
+                        <h3>Chicken Breast</h3>
+                        <p class="price">₹350.00 / kg</p>
+                        <div class="form-group">
+                            <label for="item-2">Quantity (kg):</label>
+                            <input type="number" id="item-2" class="order-input" data-price="350.00" min="0" value="0" step="0.5">
+                        </div>
+                    </div>
+                    
+                    <div class="product-item">
+                        <img src="assets/images/basmati-rice.jpg" alt="Basmati Rice">
+                        <h3>Basmati Rice</h3>
+                        <p class="price">₹120.00 / kg</p>
+                        <div class="form-group">
+                            <label for="item-3">Quantity (kg):</label>
+                            <input type="number" id="item-3" class="order-input" data-price="120.00" min="0" value="0" step="1">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="cart-summary">
+                    <h3>Order Total: <span id="total-price">₹0.00</span></h3>
+                    <button type="submit" class="btn btn-primary btn-lg">Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container form-grid">
+
+            <section id="feedback" class="form-section form-card">
+                <h2><i class="fas fa-comment-dots"></i> Share Your Feedback</h2>
+                <form id="feedback-form" class="form" novalidate>
+                    <div class="form-group">
+                        <label for="rating">How was your experience?</label>
+                        <div class="rating-group">
+                            <input type="radio" id="star5" name="rating" value="5" required><label for="star5"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4"><label for="star4"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3"><label for="star3"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2"><label for="star2"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1"><label for="star1"><i class="fas fa-star"></i></label>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback-comments">Comments:</label>
+                        <textarea id="feedback-comments" placeholder="Tell us more..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                </form>
+            </section>
+
+            <section id="suggest" class="form-section form-card">
+                <h2><i class="fas fa-lightbulb"></i> Suggest a Product</h2>
+                <form id="suggest-form" class="form" novalidate>
+                    <div class="form-group">
+                        <label for="suggest-item">Product Name:</label>
+                        <input type="text" id="suggest-item" placeholder="e.g., Organic Kombucha" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="suggest-details">Why should we add it?</label>
+                        <textarea id="suggest-details" placeholder="Product details or brand" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Suggestion</button>
+                </form>
+            </section>
+
+            <section id="request" class="form-section form-card">
+                <h2><i class="fas fa-search"></i> Request Unavailable Item</h2>
+                <form id="request-form" class="form" novalidate>
+                    <div class="form-group">
+                        <label for="request-item">Item Name:</label>
+                        <input type="text" id="request-item" placeholder="e.g., 'Brand's' Gluten-Free Flour" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="request-email">Notify me when it's back:</label>
+                        <input type="email" id="request-email" placeholder="your@email.com" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </form>
+            </section>
+
+            <section id="contact" class="form-section form-card">
+                <h2><i class="fas fa-envelope"></i> Contact Support</h2>
+                <form id="contact-form" class="form" novalidate>
+                    <div class="form-group">
+                        <label for="contact-name">Name:</label>
+                        <input type="text" id="contact-name" placeholder="Your Name" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email:</label>
+                        <input type="email" id="contact-email" placeholder="Your Email" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message:</label>
+                        <textarea id="contact-message" placeholder="Your question or inquiry..." rows="4" required></textarea>
+                        <div class="error-message"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>🛒 FreshCart</h3>
+                    <p>Quality groceries at your fingertips. © 2025 FreshCart</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Join Our Newsletter</h3>
+                    <p>Get exclusive offers and weekly deals.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+
+            <div class="tab-content active" id="login">
+                <h3>Welcome Back!</h3>
+                <form class="form" id="login-form" novalidate>
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" placeholder="your@email.com" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+
+            <div class="tab-content" id="signup">
+                <h3>Create Your Account</h3>
+                <form class="form" id="signup-form" novalidate>
+                    <div class="form-group">
+                        <label for="signup-name">Name:</label>
+                        <input type="text" id="signup-name" placeholder="Your Name" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email:</label>
+                        <input type="email" id="signup-email" placeholder="your@email.com" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" placeholder="Create a password" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
