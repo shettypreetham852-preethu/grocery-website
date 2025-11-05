@@ -25,7 +25,7 @@ This project was built as a personal portfolio piece to demonstrate skills in fr
 
 ## 🚀 Live Demo
 
-[**View the live site here**](https://your-render-url.onrender.com)
+[**View the live site here**](https://grocery-website-wc8r.onrender.com/)
 
 *(Note: Replace the URL above with your actual Render link after you deploy it!)*
 
